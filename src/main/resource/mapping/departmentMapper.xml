@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.litt.nic.Dao.departmentMapper">
+ <resultMap id="BaseResultMap" type="com.litt.nic.pojo.department">
+    <id column="department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="department_name" property="departmentName" jdbcType="VARCHAR" />
+ </resultMap>
+  <select id="selectAllInfo" resultMap="BaseResultMap">
+  select * from nic_department
+  </select>
+  <select id="getList" resultMap="BaseResultMap" parameterType="java.util.Map">
+   select * from nic_department where 1=1
+   <if test="department_name != null and department_name !=''" >
+        and department_name like CONCAT('%',#{department_name},'%')
+   </if>
+  </select>
+  <insert id="insert" parameterType="com.litt.nic.pojo.department" >
+    insert into nic_department (department_name )
+    values (#{departmentName,jdbcType=VARCHAR} )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.litt.nic.pojo.department" >
+    update nic_department 
+    set department_name = #{departmentName,jdbcType=VARCHAR}
+    where department_id = #{departmentId,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from nic_department
+    where department_id =  #{departmentId,jdbcType=INTEGER}
+  </delete>
+</mapper>

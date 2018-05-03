@@ -1,2 +1,2 @@
 # NIC-wechatPC
-view视图下serviceDock现在没有使用
+view视图下serviceDock、manager不再使用

@@ -1,5 +1,9 @@
 package com.litt.nic.common;
-
+/**
+ * 分页
+ * @author Liar
+ *
+ */
 public class Paginator {
     private int pageSize = 10;
     private int pageNumber = 1;

@@ -47,7 +47,7 @@ public class LoginController {
 		request.getSession().setAttribute("loginmanager", managers);
 		if (managers != null) {
 			if (managers.getManagerTyp() == 0)
-				return "/WEB-INF/views/manager/managerindex";
+				return "/WEB-INF/views/managerView/managerindex";
 			else {
 				return "/index";
 			}

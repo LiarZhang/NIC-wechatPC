@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
- * @author Mr.LB
+ * json结果
+ * @author Mr.zxf
  *
  */
 public abstract class AbstractBaseController {

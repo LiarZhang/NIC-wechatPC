@@ -133,14 +133,14 @@
             </div>
 
             <div class="portlet-body">
-                 <div id="toolbar" class="btn-group columns columns-left">
-                    <button id="btnAdd" type="button" class="btn btn-default" data-original-title="新增">
-                        <span>查看图片</span>
+                 <div id="toolbar" class="btn-group columns columns-left" >
+                    <button id="btnAdd" type="button" class="btn btn-success"  >
+                        <span >查看图片</span>
                     </button>
-					 <button id="btnWork" type="button" class="btn btn-default" data-original-title="编辑">
+					 <button id="btnWork" type="button" class="btn btn-danger" >
                         <span>提交</span>
                     </button>
-                    <button id="btnFeedback" type="button" class="btn btn-default" data-original-title="编辑">
+                    <button id="btnFeedback" type="button" class="btn btn-info" >
                         <span>反馈</span>
                     </button>
 

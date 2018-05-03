@@ -101,10 +101,10 @@
 
             <div class="portlet-body">
                 <div id="toolbar" class="btn-group columns columns-left">
-                    <button id="btnAdd" type="button" class="btn btn-default" data-original-title="添加">
+                    <button id="btnAdd" type="button" class="btn btn-success" data-original-title="添加">
                         <span>添加用户</span>
                     </button>
-                     <button id="btnEdit" type="button" class="btn btn-default" data-original-title="添加">
+                     <button id="btnEdit" type="button" class="btn btn-danger" data-original-title="添加">
                         <span>更新用户</span>
                     </button>
 				 	<!--

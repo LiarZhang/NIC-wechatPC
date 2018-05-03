@@ -118,7 +118,7 @@ function tableInit() {
 function change(){
 	var type = $("#parent").val();
 	console.log(type);
-	alert(type);
+	//alert(type);
 	switch(type){
 	case "service":
 		$("#city").html("");

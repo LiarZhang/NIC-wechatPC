@@ -69,7 +69,8 @@
     <script src="${pageContext.request.contextPath }/metronic/plugins/nicevalidate/jquery.validator.min.js"></script>
     <script src="${pageContext.request.contextPath }/metronic/plugins/nicevalidate/local/zh-CN.js"></script>
 
-	<script src="${pageContext.request.contextPath }/js/common.js"></script>
+	<script src="${pageContext.request.contextPath }/js/common.js?"></script>
+	
 </head>
 
 
@@ -78,26 +79,34 @@
         <div class="portlet light portlet-fit bordered">
             <div class="portlet-title">
                 <div class="row">
-
-                     <span class="col-md-2 ">消息管理</span>
-                   <!--  <div class="col-md-2 ">
+					<div class="col-md-2">
+                        <input id="location1" class="form-control" type="text" placeholder="地点"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="content1" class="form-control" type="text" placeholder="描述"/>
+                    </div> 
+                    <div class="col-md-2">
+                        <select id="managerid1"  class="form-control " data-rule="required;">
+                        </select>
+                     </div>
+                     <div class="col-md-2">
+                        <select id="status1"  class="form-control " data-rule="required;">
+                        </select>
+                     </div>
+                    <div class="col-md-2 ">
                         <button id="btnQry" type="button" class="btn blue ">查询</button>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 
             <div class="portlet-body">
                  <div id="toolbar" class="btn-group columns columns-left">
-                    <button id="btnAdd" type="button" class="btn btn-success" data-original-title="新增">
-                        <span>查看图片</span>
+					<button id="btnAdd" type="button" class="btn btn-success" data-original-title="指派">
+                        <span>指派新增</span>
                     </button>
-					<!--  <button id="btnWork" type="button" class="btn btn-default" data-original-title="编辑">
-                        <span>提交</span>
+                    <button id="btnEdit" type="button" class="btn btn-danger" data-original-title="指派">
+                        <span>指派更新</span>
                     </button>
-                    <button id="btnFeedback" type="button" class="btn btn-default" data-original-title="编辑">
-                        <span>反馈</span>
-                    </button> -->
-
                 </div>
 
                 <!--iconsPrefix 'Glyphicon' or 'fa' for FontAwesome 使用"fa"时需引用 FontAwesome，并且配合 icons 属性实现效果-->
@@ -126,30 +135,67 @@
 </div>
 
 
-<!--新增充值记录对话框-->
+<!--业务指派对话框-->
 <div id="modalMng" class="modal fade modal-scroll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">业务办理反馈</h4>
+                <h4 class="modal-title">业务指派管理</h4>
             </div>
             <div class="modal-body">
                 <form id="mngForm" action="" class="form-horizontal">
                     <div class="form-body">
 
                         <div class="form-group ">
-                            <label class="control-label col-md-3">反馈信息</label>
+							<label class="control-label col-md-2">地点</label>
 
-                            <div class="col-md-6">
-                                <textarea id="feedback" name="feedback" class="form-control" rows="5"
-                                          placeholder="请输入反馈信息"
-                                          maxlength="100" data-rule="length[~100]"></textarea>
-                            </div>
-                        </div>
+							<div class="col-md-9">
+								<textarea id="location" name="location" class="form-control"
+									rows="2" placeholder="请输入地点信息" maxlength="100"
+									data-rule="length[~100]"></textarea>
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="control-label col-md-2">内容</label>
+
+							<div class="col-md-9">
+								<textarea id="content" name="content" class="form-control"
+									rows="2" placeholder="请输入内容信息" maxlength="100"
+									data-rule="length[~100]"></textarea>
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="control-label col-md-2">备注</label>
+
+							<div class="col-md-9">
+								<textarea id="remark" name="remark" class="form-control"
+									rows="2" placeholder="请输入备注信息(可不填)" maxlength="100"
+									data-rule="length[~100]"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<label class="control-label col-md-2">进度</label>
+
+							<div class="col-md-9">
+								<select id="status" name="status" class="form-control " data-rule="required;">
+                                </select>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<label class="control-label col-md-2">处理人</label>
+
+							<div class="col-md-9">
+								<select id="managerid" name="managerid" class="form-control " data-rule="required;">
+                                </select>
+							</div>
+						</div>
+
                     </div>
-                  <input type="hidden" id="techsupportId" name="id" >
+                  <input type="hidden" id="id" name="id" > 
                 </form>
 
             </div>
@@ -160,45 +206,7 @@
         </div>
     </div>
 </div>
-<div id="work" class="modal fade modal-scroll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
-    aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">业务办理</h4>
-            </div>
-            <div class="modal-body">
-                <form id="mngFormWork" action="" class="form-horizontal">
-                    <div class="form-body">
 
-                        <div class="form-group ">
-                            <label class="control-label col-md-3">处理人</label>
-
-                            <div class="col-md-6">
-                               <select id="manager" class="form-control " data-rule="required;">
-                           		</select>
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <label class="control-label col-md-3">处理进度</label>
-                            <div class="col-md-6">
-                               <select id="workstatus" class="form-control " data-rule="required;">
-                           		</select>
-                            </div>
-                        </div>
-                    </div>
-                  <input type="hidden" id="techsupportId" name="id" >
-                </form>
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn default" type="reset" data-dismiss="modal" aria-hidden="true">关闭</button>
-                <button class="btn green" id="workSubmit" type="button">保存</button>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
@@ -245,6 +253,6 @@
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath }/js/article/mng.js"></script>
+<script src="${pageContext.request.contextPath }/js/assign/mng.js"></script>
 
 </html>

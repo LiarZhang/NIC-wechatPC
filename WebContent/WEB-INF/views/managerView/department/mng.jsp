@@ -90,10 +90,10 @@
 
             <div class="portlet-body">
                  <div id="toolbar" class="btn-group columns columns-left">
-					<button id="btnAdd" type="button" class="btn btn-default" data-original-title="新增">
+					<button id="btnAdd" type="button" class="btn btn-success" data-original-title="新增">
                         <span>添加</span>
                     </button>
-					 <button id="btnUpdate" type="button" class="btn btn-default" data-original-title="编辑">
+					 <button id="btnUpdate" type="button" class="btn btn-danger" data-original-title="编辑">
                         <span>修改</span>
                     </button>
                 </div>

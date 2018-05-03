@@ -62,7 +62,15 @@
   
                         <!-- 二级目录 -->  
             <mvc:mapping path="/manager/*" />  
-            <mvc:mapping path="/workManager/*" />  
+            <mvc:mapping path="/workManager/*" /> 
+            <mvc:mapping path="/assignManager/*" />  
+            <mvc:mapping path="/departmentManager/*" /> 
+            <mvc:mapping path="/shownews/*" />  
+            <mvc:mapping path="/suggest/*" /> 
+            <mvc:mapping path="/status/*" />  
+            <mvc:mapping path="/userManager/*" /> 
+            <mvc:mapping path="/worklog/*" />  
+            <mvc:mapping path="/workManager/*" /> 
             <!-- <mvc:mapping path="/*/*" />  -->
             
          <!--    <mvc:mapping path="/*/*/*.do" />  

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>网络与信息中心--登录</title>  
+<title>网络与信息中心</title>  
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/pintuer.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/admin.css">
     <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
@@ -27,7 +27,7 @@
             </div>         
             <form action="${pageContext.request.contextPath }/man/login" method="post">
             <div class="panel loginbox">
-                <div class="text-center margin-big padding-big-top"><h1>网络与信息中心</h1></div>
+                <div class="text-center margin-big padding-big-top"><h1>网络与信息中心技术支持平台</h1></div>
                 <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
                     <div class="form-group">
                         <div class="field field-icon-right">

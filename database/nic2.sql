@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-25 15:35:54
+Date: 2018-05-03 09:30:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,6 +38,32 @@ CREATE TABLE `nic_article` (
 INSERT INTO `nic_article` VALUES ('1', null, '太原工业网络与信息中心处', '关于开通网络与信息中心微信公众网络报修平台的通知', null, '关于开通网络与信息中心微信公众网络报修平台的通知关于开通网络与信息中心微信公众网络报修平台的通知关于开通网络与信息中心微信公众网络报修平台的通知', '关于开通网络与信息中心微信公众网络报修平台的通知关于开通网络与信息中心微信公众网络报修平台的通知', null, '/ec16892c-558b-4b6d-8ef4-b01fc64c8086.jpg');
 INSERT INTO `nic_article` VALUES ('2', null, '太原工业网络与信息中心处', '关于2018年3月24日-25日计算机等级考试的考场规则', null, '关于2018年3月24日-25日计算机等级考试的考场规则\r\n关于2018年3月24日-25日计算机等级考试的考场规则\r\n关于2018年3月24日-25日计算机等级考试的考场规则\r\n关于2018年3月24日-25日计算机等级考试的考场规则', '关于2018年3月24日-25日计算机等级考试的考场规则\r\n关于2018年3月24日-25日计算机等级考试的考场规则', null, 'cba053a8-b699-47eb-817d-bb9b464e57a4.jpg');
 INSERT INTO `nic_article` VALUES ('13', null, '太原工业网络与信息中心处', '关于领取2018年3月计算机等级考试准考证的通知', null, '关于领取2018年3月计算机等级考试准考证的通知关于领取2018年3月计算机等级考试准考证的通知关于领取2018年3月计算机等级考试准考证的通知', '关于领取2018年3月计算机等级考试准考证的通知关于领取2018年3月计算机等级考试准考证的通知', null, '90a13a52-f92a-43dd-9740-365224cb01b5.jpg');
+
+-- ----------------------------
+-- Table structure for nic_assign
+-- ----------------------------
+DROP TABLE IF EXISTS `nic_assign`;
+CREATE TABLE `nic_assign` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `createtime` datetime DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `managerid` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL COMMENT '0:表示未分配；1：已分配；2：正在处理;3:已完成',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of nic_assign
+-- ----------------------------
+INSERT INTO `nic_assign` VALUES ('1', '2018-04-26 15:48:52', '1111', '111', '111', '4', '0');
+INSERT INTO `nic_assign` VALUES ('2', '2018-04-26 17:44:44', '业务指派', '业务指派', '业务指派', '11', '1');
+INSERT INTO `nic_assign` VALUES ('3', '2018-04-26 17:44:35', '电子楼', '电子楼电子楼电子楼', '电子楼电子楼电子楼电子楼', '6', '1');
+INSERT INTO `nic_assign` VALUES ('4', '2018-04-26 16:50:22', '业务指派', '业务指派', '业务指派业务指派业务指派业务指派', '11', '1');
+INSERT INTO `nic_assign` VALUES ('5', '2018-04-26 16:56:51', '电楼', '电楼', '电子楼', '4', '1');
+INSERT INTO `nic_assign` VALUES ('6', '2018-04-26 16:58:39', '主楼', '主楼', '', '6', '1');
+INSERT INTO `nic_assign` VALUES ('7', '2018-04-26 17:43:13', '教学楼', '电脑', '', '11', '0');
 
 -- ----------------------------
 -- Table structure for nic_department
@@ -111,7 +137,7 @@ CREATE TABLE `nic_manager` (
 -- ----------------------------
 INSERT INTO `nic_manager` VALUES ('4', 'admin', '18434366995', '12222', '0', '123456');
 INSERT INTO `nic_manager` VALUES ('6', '张三', '18827364957', '维修人员', '1', '123456');
-INSERT INTO `nic_manager` VALUES ('11', '12121', '13345675678', '133566', '0', '123456');
+INSERT INTO `nic_manager` VALUES ('11', '里斯', '13345675678', '133566', '0', '123456');
 
 -- ----------------------------
 -- Table structure for nic_share
@@ -211,16 +237,16 @@ INSERT INTO `nic_techsupport` VALUES ('12', '21', '计算机工程系', '摄像�
 INSERT INTO `nic_techsupport` VALUES ('13', '19', '后勤保障处', '编码器6708', '24号楼', '编码器出现故障，上位机和伺服之间连线不正确。', '', '更换到设备地\r\n', '2017-03-24 09:17:00', '2018-04-15 22:42:02', '5', '6', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('57', '19', '后勤保障处', '摄像头', '主楼三层过道东', '视频有回放现象', '/ec16892c-558b-4b6d-8ef4-b01fc64c8086.jpg', '暂时预约在星期五下午两点半去维修', '2017-06-22 09:17:00', '2018-04-15 22:42:02', '5', '6', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('58', '21', '计算机工程系', '摄像头', '图书馆六层南阅览室西南', '无图像输出', '/ec16892c-558b-4b6d-8ef4-b01fc64c8086.jpg', '安顺发', '2017-06-24 09:17:00', '2018-04-15 22:41:44', '2', '4', '设备报修');
-INSERT INTO `nic_techsupport` VALUES ('59', '20', '计算机工程系', '摄像头', '家属区97号楼单元门前东', '不现实视频', '/ec16892c-558b-4b6d-8ef4-b01fc64c8086.jpg', 'sssssssss', '2017-06-24 09:17:00', '2017-06-28 15:39:00', '2', '4', '日常运维');
-INSERT INTO `nic_techsupport` VALUES ('60', '19', '后勤保障处', '摄像头', '3号公寓', '视频线有回放', '', '更换到设备地\r\n', '2017-06-26 09:17:00', '2018-04-09 19:32:43', '5', null, '设备报修');
+INSERT INTO `nic_techsupport` VALUES ('59', '20', '计算机工程系', '摄像头', '家属区97号楼单元门前东', '不现实视频', '/ec16892c-558b-4b6d-8ef4-b01fc64c8086.jpg', '12121', '2017-06-24 09:17:00', '2017-06-28 15:39:00', '4', '6', '日常运维');
+INSERT INTO `nic_techsupport` VALUES ('60', '19', '后勤保障处', '摄像头', '3号公寓', '视频线有回放', '', '更换到设备地\r\n', '2017-06-26 09:17:00', '2018-04-09 19:32:43', '5', '4', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('61', '19', '后勤保障处', '摄像头', '21号公寓楼', '有回放', '', '安顺发', '2017-06-27 09:17:00', '2017-06-28 15:39:00', '2', '4', '设备报修');
-INSERT INTO `nic_techsupport` VALUES ('62', '20', '计算机工程系', '摄像头', '家属区52号楼', '电源存在问题', '', '安顺发', '2017-06-29 09:17:00', '2017-07-02 16:10:00', '2', '4', '日常运维');
-INSERT INTO `nic_techsupport` VALUES ('63', '21', '计算机工程系', '摄像头', '图书馆三层南阅览室西南', '图像不清晰', '', '安顺发', '2017-07-02 14:30:00', '2017-07-07 15:39:00', '2', '4', '日常运维');
+INSERT INTO `nic_techsupport` VALUES ('62', '20', '计算机工程系', '摄像头', '家属区52号楼', '电源存在问题', '', '安顺发', '2017-06-29 09:17:00', '2017-07-02 16:10:00', '4', '6', '日常运维');
+INSERT INTO `nic_techsupport` VALUES ('63', '21', '计算机工程系', '摄像头', '图书馆三层南阅览室西南', '图像不清晰', '', '安顺发', '2017-07-02 14:30:00', '2017-07-07 15:39:00', '4', '6', '日常运维');
 INSERT INTO `nic_techsupport` VALUES ('64', '19', '后勤保障处', '摄像头', '23号楼宿舍西侧', '视频有浮影', '', '安顺发', '2017-07-03 14:30:00', '2017-07-07 15:39:00', '2', '4', '设备报修');
-INSERT INTO `nic_techsupport` VALUES ('65', '20', '计算机工程系', '摄像头', '75号楼东北房西墙', '接触不良', '', '安顺发', '2017-07-03 14:30:00', '2017-07-07 15:39:00', '2', '4', '日常运维');
+INSERT INTO `nic_techsupport` VALUES ('65', '20', '计算机工程系', '摄像头', '75号楼东北房西墙', '接触不良', '', '安顺发', '2017-07-03 14:30:00', '2017-07-07 15:39:00', '4', '6', '日常运维');
 INSERT INTO `nic_techsupport` VALUES ('66', '19', '后勤保障处', '摄像头', '教学副楼六层', '视频模糊', '', '安顺发', '2017-07-03 14:30:00', '2017-07-07 15:39:00', '2', '4', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('67', '19', '后勤保障处', '摄像头', '3号教学楼西北枪机', '图像不稳', '', '安顺发', '2017-07-05 14:30:00', '2017-07-07 15:39:00', '2', '4', '设备报修');
-INSERT INTO `nic_techsupport` VALUES ('68', '21', '计算机工程系', '摄像头', '图书馆四层南阅览室西北', '色调失真', '', '安顺发', '2017-07-06 14:30:00', '2017-07-07 15:39:00', '2', '4', '日常运维');
+INSERT INTO `nic_techsupport` VALUES ('68', '21', '计算机工程系', '摄像头', '图书馆四层南阅览室西北', '色调失真', '', '安顺发', '2017-07-06 14:30:00', '2017-07-07 15:39:00', '4', '6', '日常运维');
 INSERT INTO `nic_techsupport` VALUES ('69', '20', '计算机工程系', '摄像头', '104公寓楼西北角', '接触不良', '', '更换到设备地\r\n', '2017-07-07 14:30:00', '2017-07-07 15:39:00', '4', '4', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('70', '19', '后勤保障处', '摄像头', '西区大门球机', '光线比较暗', '', '张政带到售后维修,请耐心等待维修\r\n', '2017-07-09 14:30:00', '2018-04-10 13:51:58', '5', '4', '设备报修');
 INSERT INTO `nic_techsupport` VALUES ('89', '21', '教师工作处', '枪机', '21号宿舍南侧中高清枪机', '画面黑屏', '', '更换到设备地\r\n', '2017-07-03 14:30:00', '2017-07-07 15:39:00', '5', '4', '设备报修');
@@ -280,3 +306,32 @@ INSERT INTO `nic_user` VALUES ('25', '李明', '15234560837', '教师工作处',
 INSERT INTO `nic_user` VALUES ('26', '黄浩然', '12536883865', '环境与安全工程系', 'oq3avv48yL_tUVkWmQyFQWgAO2Lo', '1', '2018-04-15 23:20:50', '落雪倾城', '2', '中国', '山西', '太原', 'zh_CN', 'http://wx.qlogo.cn/mmopen/Hwic76oHlIricsul10ArL4wAQazBr8pYEuzKAwF2D70wuicKqsYaNAMmSSI8dnv3j5kiacPTsh27BDUggHzgelAImTNo11FTBKWL/0', '1');
 INSERT INTO `nic_user` VALUES ('58', '嗯嗯嗯', '456789', '环境与安全工程系', 'opCIT0mainGgF_7zcEuaCUHifEbs', '1', '2018-04-15 23:20:52', 'coolICE', '0', '', '', '', 'zh_CN', 'http://thirdwx.qlogo.cn/mmopen/CiaNSfrX9nkdbSMC3SxV9zQZ2kCQibLsvYMNVXUrtelrhiap9ibFcoAe1WEP1S5lZOU2ibm4iabf1sNW8WAEYj70PiclyPKjFxNiaSC3/132', '1');
 INSERT INTO `nic_user` VALUES ('59', '不同', '1478956', '理学系', 'opCIT0i9FQHcpsP4bcYP1mIbcABQ', '1', '2018-04-15 23:20:55', 'Mr. Lonely', '1', '澳大利亚', '维多利亚', '墨尔本', 'zh_CN', 'http://thirdwx.qlogo.cn/mmopen/jfibLbIaRNxBQc7ibIGOydibE20cngR18VDQibtUgLmY4Go2pgwebDicwPN9iaFTQQqPkSCLwmceHmyfIrPKy9699DHfaYZmMs8jia6/132', '1');
+
+-- ----------------------------
+-- Table structure for nic_worklog
+-- ----------------------------
+DROP TABLE IF EXISTS `nic_worklog`;
+CREATE TABLE `nic_worklog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `createtime` datetime DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `managerid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of nic_worklog
+-- ----------------------------
+INSERT INTO `nic_worklog` VALUES ('1', '2018-04-25 16:59:03', 'sad', '1111', '111', '4');
+INSERT INTO `nic_worklog` VALUES ('2', '2018-04-26 12:18:08', '12212', '张三', '123333', '4');
+INSERT INTO `nic_worklog` VALUES ('3', '2018-04-26 12:25:46', '23#楼', '笔记本', '电能', '4');
+INSERT INTO `nic_worklog` VALUES ('4', '2018-04-26 14:19:45', '西区机房', '西区机房西区机房', '', '4');
+INSERT INTO `nic_worklog` VALUES ('9', '2018-04-26 12:22:16', '张三', '张三', '张三', '4');
+INSERT INTO `nic_worklog` VALUES ('10', '2018-04-26 11:33:11', '萨达啥', '说的都是发生', '发生的发', null);
+INSERT INTO `nic_worklog` VALUES ('11', '2018-04-26 11:39:46', '说的是多少分担分担', '东方时尚', 'xvcxv', '4');
+INSERT INTO `nic_worklog` VALUES ('12', '2018-04-26 12:03:39', '东区主楼', '摄像头', '摄像头有问题', '4');
+INSERT INTO `nic_worklog` VALUES ('14', '2018-04-26 12:22:16', '里斯', '里斯', '里斯里斯', '4');
+INSERT INTO `nic_worklog` VALUES ('15', '2018-04-26 12:25:46', '计算机系办', '计算机', '计算机', '4');
+INSERT INTO `nic_worklog` VALUES ('16', '2018-04-26 12:25:46', '主楼', '电脑电脑', '投影仪坏了', '4');

@@ -27,7 +27,7 @@
             </div>         
             <form action="${pageContext.request.contextPath }/man/login" method="post">
             <div class="panel loginbox">
-                <div class="text-center margin-big padding-big-top"><h1>网络与信息中心技术支持平台</h1></div>
+                <div class="text-center margin-big padding-big-top"><h1>太原工业学院网络与信息中心</h1><h1>技术支持平台</h1></div>
                 <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
                     <div class="form-group">
                         <div class="field field-icon-right">

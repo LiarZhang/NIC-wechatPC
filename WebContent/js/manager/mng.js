@@ -22,6 +22,8 @@ $(function () {
 //调新增页面
 function toadd(){
 	Common.clearFormValidatorMsg('modalMng');
+	Common.clearFormValidatorMsg('mngForm');
+   	Common.clearFormData('mngForm');
 	//var rows = $('#table').bootstrapTable('getSelections');
 	 $('#action').val('add');
  	Common.showModalMng('modalMng');

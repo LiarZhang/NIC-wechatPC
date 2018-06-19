@@ -1,41 +1,30 @@
 package com.litt.nic.pojo;
 
-
+/**
+ *技术支持业务实体类
+ */
 public class techsupport {
-	private Integer techsupportId;
-
-	private Integer userId;
-
-	private String techsupportDepartment;
-
-	private String techsupportDevicename;
-
-	private String techsupportLocation;
-
-	private String techsupportDescribe;
-
-	private String techsupportPicture;
-
-	private String techsupportFeedback;
-
-	private String techsupportUptime;
-
-	private String techsupportEndtime;
-
-	private Integer statusId;
-
-	private Integer managerId;
-
-	private String type;
+	
+	private Integer techsupportId;//技术支持业务id
+	private Integer userId;//用户id
+	private String techsupportDepartment;//部门
+	private String techsupportDevicename;//设备
+	private String techsupportLocation;//地点
+	private String techsupportDescribe;//描述
+	private String techsupportPicture;//图片
+	private String techsupportFeedback;//反馈
+	private String techsupportUptime;//提交时间
+	private String techsupportEndtime;//完成时间
+	private Integer statusId;//状态id
+	private Integer managerId;//管理员id
+	private String type;//业务类型
 
 	public Integer getTechsupportId() {
 		return techsupportId;
 	}
-
 	public void setTechsupportId(Integer techsupportId) {
 		this.techsupportId = techsupportId;
 	}
-
 	public Integer getUserId() {
 		return userId;
 	}
